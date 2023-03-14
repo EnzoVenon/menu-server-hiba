@@ -13,6 +13,8 @@ jobs:
       - uses: Code-Hex/neo-cowsay-action@v1
         with:
           message : cat README.md
-
+      - uses: juliangruber/read-file-action@v1
+        with:
+          path: README.md 
       - run: ls -l
       #- run: cat README.md | cowsay 
