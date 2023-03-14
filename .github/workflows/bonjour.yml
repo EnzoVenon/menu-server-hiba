@@ -14,9 +14,12 @@ jobs:
       #  with:
       #    message : cat README.md
       - uses: juliangruber/read-file-action@v1
-        id: readfile
+        id: readme
         with:
           path: README.md 
-      - run: echo "${{readfile.outputs.content}}"
+      #.- run: echo "${{steps.readme.outputs.content}}"
+      - uses: Code-Hex/neo-cowsay-action@v1
+        with:
+          message : "${{steps.readme.outputs.content}}"
       #- run: ls -l
       #- run: cat README.md | cowsay 
