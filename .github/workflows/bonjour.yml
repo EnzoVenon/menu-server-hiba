@@ -17,6 +17,6 @@ jobs:
         id: readfile
         with:
           path: README.md 
-      - run: echo "${{steps.readfile.outputs.content}}"
+      - run: echo "${{readfile.outputs.content}}"
       #- run: ls -l
       #- run: cat README.md | cowsay 
