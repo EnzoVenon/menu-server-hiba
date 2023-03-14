@@ -28,7 +28,7 @@ public class MenuController {
   }
 
   @GetMapping(path = "/menus", produces = "application/json")
-  //public List<MenuDto> listMenus() {
+  public List<MenuDto> listMenus() {
     return listMenuService.listMenus();
   }
 
