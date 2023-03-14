@@ -4,8 +4,9 @@ on:
 jobs:
   dire_bonjour:
     runs-on: ubuntu-22.04
+    container: ghcr.io/cicd-lectures/gitpod:latest
     steps:
-      - run : sudo apt-get install cowsay
+      #- run : sudo apt-get install cowsay
       - uses: actions/checkout@v3
       - run: ls -l
       - run: cat README.md | cowsay 
