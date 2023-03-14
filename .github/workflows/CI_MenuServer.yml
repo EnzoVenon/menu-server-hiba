@@ -1,6 +1,7 @@
 name: menu-server
 on:
   - push
+  - pull_request
 jobs:
   menu-server:
     runs-on: ubuntu-22.04
