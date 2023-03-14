@@ -17,4 +17,4 @@ jobs:
         with:
           path: README.md 
       - run: ls -l
-      #- run: cat README.md | cowsay 
+      - run: cat README.md | cowsay 
