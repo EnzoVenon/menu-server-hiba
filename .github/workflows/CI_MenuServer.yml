@@ -15,3 +15,4 @@ jobs:
         with:
           maven-version: 3.8.6
       - run: mvn package
+      - run: echo "All work and no play makes Jack a dull cow." | cowsay
