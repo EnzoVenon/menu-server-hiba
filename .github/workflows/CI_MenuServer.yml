@@ -1,8 +1,8 @@
-name: Bonjour
+name: menu-server
 on:
   - push
 jobs:
-  dire_bonjour:
+  menu-server:
     runs-on: ubuntu-22.04
     #container: 
     #  image: ghcr.io/cicd-lectures/gitpod:latest
@@ -10,14 +10,17 @@ jobs:
     steps:
       #- run : sudo apt-get install cowsay
       - uses: actions/checkout@v3
-      #- uses: Code-Hex/neo-cowsay-action@v1
-      #  with:
-      #    message : cat README.md
       - uses: juliangruber/read-file-action@v1
         id: readme
         with:
           path: README.md 
-      #.- run: echo "${{steps.readme.outputs.content}}"
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu' 
+          java-version: '17'
+      - uses: stCarolas/setup-maven@v4.5
+        with:
+          maven-version: 3.8.6
       - uses: Code-Hex/neo-cowsay-action@v1
         with:
           message : "${{steps.readme.outputs.content}}"
