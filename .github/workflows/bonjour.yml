@@ -10,11 +10,13 @@ jobs:
     steps:
       #- run : sudo apt-get install cowsay
       - uses: actions/checkout@v3
-      - uses: Code-Hex/neo-cowsay-action@v1
-        with:
-          message : cat README.md
+      #- uses: Code-Hex/neo-cowsay-action@v1
+      #  with:
+      #    message : cat README.md
       - uses: juliangruber/read-file-action@v1
+        id: readfile
         with:
           path: README.md 
-      - run: ls -l
-      - run: cat README.md | cowsay 
+      - run: echo "${{steps.readfile.outputs.content}}"
+      #- run: ls -l
+      #- run: cat README.md | cowsay 
