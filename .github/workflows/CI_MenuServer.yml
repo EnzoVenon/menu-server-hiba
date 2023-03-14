@@ -4,16 +4,8 @@ on:
 jobs:
   menu-server:
     runs-on: ubuntu-22.04
-    #container: 
-    #  image: ghcr.io/cicd-lectures/gitpod:latest
-    #  options: --user root
     steps:
-      #- run : sudo apt-get install cowsay
       - uses: actions/checkout@v3
-      - uses: juliangruber/read-file-action@v1
-        id: readme
-        with:
-          path: README.md 
       - uses: actions/setup-java@v3
         with:
           distribution: 'zulu' 
@@ -21,8 +13,4 @@ jobs:
       - uses: stCarolas/setup-maven@v4.5
         with:
           maven-version: 3.8.6
-      - uses: Code-Hex/neo-cowsay-action@v1
-        with:
-          message : "${{steps.readme.outputs.content}}"
-      #- run: ls -l
-      #- run: cat README.md | cowsay 
+      - run: mvn compile
