@@ -27,8 +27,8 @@ public class MenuController {
     this.listMenuService = listMenuService;
   }
 
-  //@GetMapping(path = "/menus", produces = "application/json")
-  public List<MenuDto> listMenus() {
+  @GetMapping(path = "/menus", produces = "application/json")
+  //public List<MenuDto> listMenus() {
     return listMenuService.listMenus();
   }
 
