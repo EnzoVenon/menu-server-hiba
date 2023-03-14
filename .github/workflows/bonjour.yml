@@ -4,11 +4,15 @@ on:
 jobs:
   dire_bonjour:
     runs-on: ubuntu-22.04
-    container: 
-      image: ghcr.io/cicd-lectures/gitpod:latest
-      options: --user root
+    #container: 
+    #  image: ghcr.io/cicd-lectures/gitpod:latest
+    #  options: --user root
     steps:
       #- run : sudo apt-get install cowsay
       - uses: actions/checkout@v3
+      - uses: Code-Hex/neo-cowsay-action@v1
+        with:
+          message : hey
+
       - run: ls -l
       - run: cat README.md | cowsay 
