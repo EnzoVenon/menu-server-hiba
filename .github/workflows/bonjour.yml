@@ -5,5 +5,11 @@ jobs:
   dire_bonjour:
     runs-on: ubuntu-22.04
     steps:
-      - run: ls -l
-      - run: cat ../../README.md 
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      #- run: cat ${{ github.workspace }}../../README.md
+      #- run: echo "This job's status is ${{ job.status }}." 
